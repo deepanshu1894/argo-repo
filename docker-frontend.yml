@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build: ./frontend
+    environment:
+      - USER_API_END_POINT=http://localhost:5000
+    ports:
+      - "3000:80"  # React app served via Nginx on port 80 -> host:3000
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb+srv://piyush133jain:jobportal@cluster0.psiszei.mongodb.net
+      - CLOUD_NAME=drc4x0jax
+      - API_KEY=462718162439316
+      - API_SECRET=vLwn0Ncryq0SpEwKs6JalIuOqBI
+      - PORT=5000
+      - SECRET_KEY=dev#piyush
