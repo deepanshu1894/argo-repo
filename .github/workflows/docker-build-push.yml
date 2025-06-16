@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push backend image
-        if: contains(github.event.head_commit.message, 'backend') || contains(github.event.commits.*.modified, 'backend/')
+        if: contains(github.event.head_commit.message, 'backend') || contains(join(github.event.commits.*.modified, ','), 'backend/')
         uses: docker/build-push-action@v5
         with:
           context: ./backend
@@ -39,7 +39,7 @@ jobs:
           tags: ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
 
       - name: Build and push frontend image
-        if: contains(github.event.head_commit.message, 'frontend') || contains(github.event.commits.*.modified, 'frontend/')
+        if: contains(github.event.head_commit.message, 'frontend') || contains(join(github.event.commits.*.modified, ','), 'frontend/')
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
