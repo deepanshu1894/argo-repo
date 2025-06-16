@@ -2,9 +2,9 @@ name: Build & Push Docker Image
 
 on:
   push:
-    # paths:
-    #   - 'frontend/**'
-    #   - 'backend/**'
+    paths:
+      - 'frontend/**'
+      - 'backend/**'
     branches:
       - main  # or your default branch
 
