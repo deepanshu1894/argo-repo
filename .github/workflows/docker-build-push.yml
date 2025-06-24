@@ -33,13 +33,13 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-            context: ./backend
-            push: true
-            tags: ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
+          context: ./backend
+          push: true
+          tags: ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
 
-        - name: Build and push frontend image
+      - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-            context: ./frontend
-            push: true
-            tags: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
+          context: ./frontend
+          push: true
+          tags: ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
