@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ghcr.io/deepanshu1894/argo-repo-frontend:13057af716782a453dbcdeb96be70be23f27bd35@sha256:cb09018404890ecfcf3f0064b28810eb75d580ca3c5f58ad99734eb9662d585c
+        ports:
+        - containerPort: 80 # adjust if needed
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"

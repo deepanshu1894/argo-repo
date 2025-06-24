@@ -7,7 +7,8 @@ services:
       - "3000:80"  # React app served via Nginx on port 80 -> host:3000
 
   backend:
-    build: ./backend
+    image: ghcr.io/deepanshu1894/argo-repo-backend:13057af716782a453dbcdeb96be70be23f27bd35@sha256:0a4d7a06fd7aa6018a178b1efbe67409303720900b670ec1958fe077c99b3953
+    platform: linux/amd64
     ports:
       - "5000:5000"
     environment:

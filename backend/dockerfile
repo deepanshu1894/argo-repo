@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --include=dev
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["sh", "./node_modules/.bin/nodemon", "index.js"]
+CMD ["npx", "nodemon", "index.js"]
