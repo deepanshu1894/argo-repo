@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ghcr.io/deepanshu1894/argo-repo-frontend:103fd5a7d409fb3dd6a61554e0e1a1b9ae19914b
+        image: ghcr.io/deepanshu1894/argo-repo-frontend:dd1f8965159195729f9659026f41d821f44a4960
         ports:
         - containerPort: 80 # adjust if needed
         resources:
