@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/deepanshu1894/argo-repo-backend:78ff9b1e9e443c8ef1fcc35d171d1473fc908fc9@sha256:1a91f172b703821d18c2956fe5ddcb10799ca0e837f660942d85bfd9f5f1fe6c
+        image: ghcr.io/deepanshu1894/argo-repo-backend:1317ca95984ae7cd5d7a26f01be512e8c62dc407@sha256:e467c9e876a388e2c4f95c24405324057d09b4c95c3a5e28037774fef3469f19
         env:
           - name: MONGODB_URI
             value: mongodb+srv://piyush133jain:jobportal@cluster0.psiszei.mongodb.net
