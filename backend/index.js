@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'http://frontend.default.svc.cluster.local',
+    origin:'*',
     methods:['GET','POST','PUT','DELETE'],
     allowedHeaders:['Content-Type', 'Authorization'],
     exposedHeaders: ['Content-Disposition'],
