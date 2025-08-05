@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/deepanshu1894/argo-repo-backend:40f319c5f9082ce717301c5d550e8251a025d3ae@sha256:e7bb43dd540a953340cd7f2de804e1f86c6b322dcdb1ef617702455cf61e4327
+        image: ghcr.io/deepanshu1894/argo-repo-backend:1d16c3259cd04b7ea955263138420e903c7a56e6@sha256:c5b8a0e8463bb1810399e625bf756203c679bed6495d2ec863bfcbf26844a26f
 
         env:
           - name: MONGODB_URI
