@@ -6,30 +6,30 @@ spec:
   selector:
     app: frontend
   ports:
-    - port: 3000
-      targetPort: 80
+    - port: 3000      # Ingress will hit this
+      targetPort: 80  # Container port from Deployment
 
 ---
 
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: jobsphere-ingress
-# spec:
-#   rules:
-#     - http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: frontend
-#                 port:
-#                   number: 3000
-#           - path: /api/
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: backend
-#                 port:
-#                   number: 5000
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jobsphere-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 3000
+          - path: /api/
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 5000
